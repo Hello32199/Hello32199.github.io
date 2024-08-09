@@ -1,0 +1,94 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial;
+}
+
+.header {
+    text-align: center;
+    background-color: orange;
+    color: black;
+    width: 100%;
+    height: 20vh;
+}
+
+
+.menu {
+    background-color: #1b1814;
+    width: 100%;
+    height: 7vh;
+}
+
+.ul-menu {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    align-items: center;
+}
+
+.li-menu {
+    list-style-type: none;
+    padding: 5px;
+    margin: 15px;
+    color: black;
+    font-size: 20px;
+}
+
+.li-menu:hover {
+    background-color: green;
+    transition: .5s ease-in-out;
+    transition-delay: .3s;
+    border-radius: 8px;
+}
+
+.a-menu {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+}
+
+.side-bar{
+    background-color: greenyellow;
+    width: 15%;
+    height: 65vh;
+    text-align: center;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.content {
+    background-color: yellow;
+    width: 85%;
+    height: 65vh;
+    text-align: center;
+    align-items: center;
+}
+
+.order {
+    background-color: yellow;
+    width: 85%;
+    height: 65vh;
+    font-size: 20px;
+}
+
+.img-menu {
+    border-radius: 20px;
+}
+
+.invoice {
+    text-align: center;
+}
+
+.footer {
+    background-color: orange;
+    color: black;
+    text-align: center;
+    width: 100%;
+    height: 8vh;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cream Cake Store</title>
+    <link rel="stylesheet" href="style.css">
+<body bgcolor="#FFFF00">
+<script>
+    function loadKwitansi() {
+        var param = new URLSearchParams(window.location.search);
+        var wilayah = param.get("wilayah");
+        var ongkir = param.get("ongkir");
+        var jumlah = param.get("jumlah");
+        var total = param.get("total");
+        var pembayaran = param.get("pembayaran");
+        var harga = param.get("harga");
+
+        document.getElementById("harga").innerHTML = harga;
+        document.getElementById("wilayah").innerHTML = wilayah;
+        document.getElementById("ongkir").innerHTML = ongkir;
+        document.getElementById("jumlah").innerHTML = jumlah;
+        document.getElementById("pembayaran").innerHTML = pembayaran;
+        document.getElementById("total").innerHTML = total;
+    }
+</script>
+<table class="invoice" border="2" cellpadding="2" width="200px" align="center">
+    <body onload="loadKwitansi()">
+        <td>
+            KUE DIPILIH: <h2 id="harga"></h2><br>
+            <hr>
+            WILAYAH: <h2 id="wilayah"></h2><br>
+            <hr>
+            ONGKIR: <h2 id="ongkir"></h2><br>
+            <hr>
+            JUMLAH: <h2 id="jumlah"></h2><br>
+            <hr>
+            PEMBAYARAN: <h2 id="pembayaran"></h2><br>
+            <hr>
+            TOTAL: <h2 id="total"></h2><br>
+            <hr>
+        </td>
+</table>
+</body>
+<a href="Home.html">Kembali Ke Menu Home</a>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cream Cake Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+
+    <div class="header">
+        <br>
+        <h2><b>Hello Customer!!!<br>Welcome To Cream Cake Store :)</b></h2>
+        <br>
+        <marquee direction="right" scrolldelay=100>Selamat Datang Silahkan Order :) Selamat Datang Silahkan Order :) Selamat Datang Silahkan Order :)</marquee><br>
+        <marquee direction="left" scrolldelay=100>Selamat Datang Silahkan Order :) Selamat Datang Silahkan Order :) Selamat Datang Silahkan Order :)</marquee><br>
+    </div>
+
+    <div class="menu">
+        <ul class="ul-menu">
+            <li class="li-menu">
+            <a href="Home.html" class="a-menu">Home Menu</a>
+            </li>
+            <li class="li-menu">
+            <a href="Order.html" class="a-menu">Order</a>
+            </li>
+            <li class="li-menu">
+            <a href="About.html" class="a-menu">About Me</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="side-bar">
+            <br><br>
+            <img src="Foto.jpg" style="width: 100px; border-radius: 20px;">
+            <h4>Follow Me On: </h4><br><br>
+            <a href="https://www.facebook.com/hafidh.perbawa.5?mibextid=ZbWKwL">Facebook</a><br>
+            <a href="https://www.instagram.com/invites/contact/?igsh=sw0rgqimze3s&utm_content=48jeobd">Instagram</a>
+        </div>
+
+        <div class="order">
+            <h3>Silahkan Masukan Detail Pembelian</h3>
+            <br>
+            <form action="" method="POST">
+                <table border="1" cellpadding="0" width="100%">
+                    <tr>
+                        <td>
+                            <label>PILIH KUE :</label>
+                            <select id="harga">
+                                <option></option>
+                                <option value="60000">Cream Puff (Rp60.000)</option>
+                                <option value="70000">Creme Brulee (Rp70.000)</option>
+                                <option value="45000">Linzer Torte (Rp45.000)</option>
+                                <option value="65000">Red Velvet (Rp65.000)</option>
+                                <option value="30000">Blueberry Pie (Rp30.000)</option>
+	                            <option value="50000">Caramel Choux (Rp50.000)</option>
+                            </select>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>JASA PENGIRIMAN :</label>
+                            <select id="ongkir">
+                                <option></option>
+                                <option value="8000">Grab Food (8.000)</option>
+                                <option value="12000">GO Food (12.000)</option>
+                                <option value="15000">Shopee Food (15.000)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>WILAYAH :</label>
+                            <select id="wilayah"></id>
+                                <option></option>
+                                <option value="Jakarta">Jakarta</option>
+                                <option value="Bandung">Bandung</option>
+                                <option value="Depok">Depok</option>
+		                        <option value="Bogor">Bogor</option>
+                                <option value="Cimahi">Cimahi</option>
+                                <option value="Sumedang">Sumedang</option>
+		                        <option value="Tangerang">Tangerang</option>
+                                <option value="Garut">Garut</option>
+                                <option value="Karawang">Karawang</option>	
+                            </select>  
+                    </tr>
+                    <hr>
+                    <br>
+                    <td>
+                        <label>PEMBAYARAN :</label>
+                            <select id="pembayaran">
+                                <option></option>
+                                <option value="Qris">Qris</option>
+                                <option value="E-Wallet">E-Wallet</option>
+                                <option value="Mobile Banking">Mobile Banking</option>
+                            </select>
+                    </td>
+                    </hr>
+                    <tr>
+                    <tr>
+                        <td>
+                            <label>JUMLAH PESANAN :</label>
+                            <input type="text" id="jumlah"><br>
+                        </td>
+                    </tr>  
+                </table>
+                <button onclick="total()" type="button">TOTAL</button>
+                <button type="button" onclick="kwitansiPembayaran()">CETAK KWITANSI</button>
+            </form>
+            <h3>Total Harga :</h3><h3 id="total"></h3>
+            <script>
+                 function kwitansiPembayaran() {
+            var harga = parseInt(document.getElementById("harga").value);
+            // var JASA = document.getElementById("jasa").value;
+            var wilayah = document.getElementById("wilayah").value;
+            var ongkir = parseInt(document.getElementById("ongkir").value);
+            var jumlah = parseInt(document.getElementById("jumlah").value);
+            var pembayaran = document.getElementById("pembayaran").value;
+            var total = (harga * jumlah) + ongkir;
+            document.getElementById("total").innerHTML = new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR"
+            }).format(total);;
+
+
+            window.location = "kwitansi.html" + "?harga=" + harga + "&total"+ total+"&ongkir=" + ongkir + "&jumlah=" + jumlah + "&total=" + total + "&wilayah=" + wilayah + "&pembayaran=" + pembayaran
+        }
+
+        function total() {
+            var harga = parseInt(document.getElementById("harga").value);
+            var ongkir = parseInt(document.getElementById("ongkir").value);
+            var jumlah = parseInt(document.getElementById("jumlah").value);
+            var total = (harga * jumlah) + ongkir;
+            document.getElementById("total").innerHTML = new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR"
+            }).format(total);;
+        }
+            </script>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <strong>UTS Komputer Aplikasi Teknologi Informasi<br>10523009_Hafidh Adrito Perbawa</strong>
+    </div>
+</body>
+</html>
